@@ -8,7 +8,6 @@
 .gameContainer {
   display: flex;
   justify-content: center;
-  background-color: #f5b1ff;
   align-items: flex-start;
   flex-wrap: wrap;
   margin-top: 10vh;

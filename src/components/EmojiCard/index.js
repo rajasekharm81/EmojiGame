@@ -2,12 +2,17 @@ import {Component} from 'react'
 import './index.css'
 
 class EmojiItem extends Component {
+  send = () => {
+    const {id, updatePoints} = this.props
+    updatePoints(id)
+  }
+
   render() {
     const {item} = this.props
     return (
-      <div className="EmojiCardContainer">
+      <button onClick={this.send} className="EmojiCardContainer">
         <img className="EmojiIcon" src={item.emojiUrl} alt={item.emojiName} />
-      </div>
+      </button>
     )
   }
 }

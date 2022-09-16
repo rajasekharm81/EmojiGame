@@ -3,7 +3,10 @@
   justify-content: center;
   align-items: center;
   padding: 30px;
-  margin: 20px;
+  margin: 10px;
+  background-color: #f5b1ff;
+  border-radius: 10px;
+  border: none;
 }
 
 .EmojiIcon {
