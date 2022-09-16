@@ -1,0 +1,33 @@
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 8vh;
+  background-color: #fcdefc;
+  width: 100vw;
+}
+
+.logoConntainer {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  width: 300px;
+}
+
+.TitleHeading {
+  width: fit-content;
+  color: white;
+  width: 300px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ScoreContainer {
+  display: flex;
+  color: white;
+  margin-right: 80px;
+}
+
+.scoreHeading {
+  margin-right: 50px;
+}

@@ -1,0 +1,11 @@
+.EmojiCardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin: 20px;
+}
+
+.EmojiIcon {
+  width: 100px;
+}
