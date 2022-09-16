@@ -12,8 +12,18 @@ class EmojiGame extends Component {
     return emojisList.sort(() => Math.random() - 0.5)
   }
 
+  playAgain = () => {
+    const {score} = this.state
+    if (score === 12) {
+      this.setState({isGameOver: false, score: 0, topScore: 12})
+    } else {
+      this.setState({isGameOver: false, score: 0})
+    }
+  }
+
   updatePoints = id => {
     const {score, topScore, clickedIds} = this.state
+
     if (clickedIds.includes(id)) {
       if (score > topScore) {
         this.setState({topScore: score})
@@ -28,12 +38,13 @@ class EmojiGame extends Component {
   }
 
   renderOnCondition = () => {
-    const {emojisList} = this.props
-    const {clickedIds, topScore, isGameOver} = this.state
-    if (isGameOver === false) {
+    // const {emojisList} = this.props
+    const list = this.shuffledEmojisList()
+    const {topScore, score, isGameOver} = this.state
+    if (isGameOver === false && score !== 12) {
       return (
         <div className="gameContainer">
-          {emojisList.map(each => (
+          {list.map(each => (
             <EmojiItem
               updatePoints={this.updatePoints}
               key={each.id}
@@ -44,11 +55,19 @@ class EmojiGame extends Component {
         </div>
       )
     }
-    return <WinOrLoseCard />
+    return (
+      <WinOrLoseCard
+        topScoreUpdate={this.winTopScoreUpdate}
+        isGameOver={isGameOver}
+        score={score}
+        topScore={topScore}
+        playAgain={this.playAgain}
+      />
+    )
   }
 
   render() {
-    const emojies = this.shuffledEmojisList()
+    // const emojies = this.shuffledEmojisList()
     const {score, topScore} = this.state
     return (
       <div className="mainContainer">

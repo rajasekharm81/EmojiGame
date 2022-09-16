@@ -10,7 +10,7 @@ class EmojiItem extends Component {
   render() {
     const {item} = this.props
     return (
-      <button onClick={this.send} className="EmojiCardContainer">
+      <button type="button" onClick={this.send} className="EmojiCardContainer">
         <img className="EmojiIcon" src={item.emojiUrl} alt={item.emojiName} />
       </button>
     )

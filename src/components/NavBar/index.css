@@ -26,8 +26,13 @@
   display: flex;
   color: white;
   margin-right: 80px;
+  justify-content: center;
+  align-items: center;
 }
 
 .scoreHeading {
+  margin-right: 50px;
+}
+.topScoreHeading {
   margin-right: 50px;
 }
